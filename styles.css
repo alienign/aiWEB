@@ -13,25 +13,44 @@ body {
 }
 
 .header {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to right, #6a6a6a, #1c1c1c);
     color: #fff;
-    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    overflow: hidden;
+}
+
+.header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    animation: gradientAnimation 15s infinite;
 }
 
 .header-title {
     font-family: 'Lobster', cursive;
     font-size: 3rem;
     margin: 0;
+    z-index: 2;
 }
 
 .header-subtitle {
     font-size: 1.5rem;
     margin: 10px 0 0;
+    z-index: 2;
 }
 
 .about {
     padding: 50px 0;
+    background-color: #e0e0e0;
 }
 
 .about-content {
@@ -45,15 +64,17 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-text h2 {
     font-size: 2rem;
     margin-bottom: 10px;
+    color: #4a4a4a;
 }
 
 .projects {
-    background-color: #fff;
+    background-color: #f0f0f0;
     padding: 50px 0;
 }
 
@@ -61,6 +82,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
+    color: #4a4a4a;
 }
 
 .projects-gallery {
@@ -77,6 +99,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
 }
 
 .project-item img {
@@ -87,6 +114,7 @@ body {
 .project-item h3 {
     margin: 15px 0 10px;
     font-size: 1.25rem;
+    color: #4a4a4a;
 }
 
 .footer {
@@ -98,4 +126,16 @@ body {
 
 .footer p {
     margin: 0;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background: rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        background: rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.5);
+    }
 }
